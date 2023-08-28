@@ -34,16 +34,22 @@ int size(stack *st){
 bool empty(stack *st){
 	return st->top <= -1;
 }
-int main(){
+void reverse_arr(int arr[], int n){
 	stack s1;
 	init_stack(&s1);
-	for(int i = 0; i < 5; i++){
-		push(&s1, i+1);
+	for(int i = 0; i < n; i++){
+		push(&s1, arr[i]);
 	}
-	while(!empty(&s1)){
-		printf("%d ", top(&s1));
+	for(int i = 0; i < n; i++){
+		arr[i] = top(&s1);
 		pop(&s1);
 	}
+}
+int main(){
+	int arr[] = {10, 9, 8, 7, 6, 5, 4, 3, 2, 1};
+	int n = sizeof(arr)/sizeof(arr[0]);
+	reverse_arr(arr, n);
+	for(int i = 0; i < n; i++) printf("%d ", arr[i]);
 	printf("\n");
 	return 0;
 }
