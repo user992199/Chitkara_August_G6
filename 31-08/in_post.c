@@ -95,11 +95,11 @@ void post(char arr[]){
 		case '*':
 		case '/':
 		case '^':
-			// agar stack khali hai => push
-			if(empty(&s)){
-				push(&s, arr[i]);
-				continue;
-			}
+			// // agar stack khali hai => push
+			// if(empty(&s)){
+			// 	push(&s, arr[i]);
+			// 	continue;
+			// }
 			// check priority of the operator at top
 			// and pop it, if it has, greater or equal priority
 			// as the current operator
